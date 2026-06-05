@@ -1,0 +1,50 @@
+<html lang="en">
+    <head>
+        <title>{{ page.title|striptags }} - {{ SITENAME|striptags }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" />
+    </head>
+
+    <body>
+        <header>
+            <h2><a href="/">{{ SITENAME|striptags }}</a></h2>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/member-organization">Member Organizations</a></li>
+                    <li><a href="/coc">Code of Conduct</a></li>
+                    <li><a href="https://github.com/BAPyA">Documents</a></li>
+                    <li><a class="button" href="/donate">Donate Now</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {% if page.metadata['image'] %}
+            <div class="banner">
+                <img src="{{ SITEURL }}/images/{{ page.metadata['image'] }}"/>
+            </div>
+            {% endif %}
+
+            <section>
+                {{ page.content }}
+            </section>
+        </main>
+
+        <footer>
+            <p>Bay Area Python Assocation</p>
+            <nav>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/about">Team</a></li>
+                    <li><a href="/coc">Code of Conduct</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/member-organization">Get Involved</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>
